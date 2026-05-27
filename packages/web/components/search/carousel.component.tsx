@@ -29,6 +29,27 @@ export function CarouselComponent({
   const theme = useTheme();
   const { data: moviesLibrary } = useGetLibraryMoviesQuery();
   const { data: tvShowsLibrary } = useGetLibraryTvShowsQuery();
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getCarouselSettings = () => {
+    if (!windowWidth) return { visibleSlides: 5, cardWidth: 220 };
+
+    if (windowWidth < 576) {
+      return { visibleSlides: 1, cardWidth: Math.min(200, windowWidth - 40) };
+    } else if (windowWidth < 992) {
+      return { visibleSlides: 2, cardWidth: (windowWidth - 60) / 2.2 };
+    }
+    return { visibleSlides: 5, cardWidth: 220 };
+  };
+
+  const { visibleSlides, cardWidth } = getCarouselSettings();
 
   const tmdbIds = [
     ...(moviesLibrary?.movies?.map(({ tmdbId }) => tmdbId) || []),
@@ -39,11 +60,11 @@ export function CarouselComponent({
     <div className="carrousel--container">
       <CarouselProvider
         naturalSlideHeight={theme.tmdbCardHeight}
-        naturalSlideWidth={220}
+        naturalSlideWidth={cardWidth}
         totalSlides={results.length}
         dragEnabled={false}
-        visibleSlides={5}
-        step={5}
+        visibleSlides={visibleSlides}
+        step={Math.max(1, visibleSlides - 1)}
       >
         <ResetCarouselSlideAndGoBack watch={results} />
         <Slider>
@@ -62,10 +83,15 @@ export function CarouselComponent({
             </Slide>
           ))}
         </Slider>
-        {results.length > 5 && (
-          <ButtonNext className="arrow-right">
-            <FaChevronCircleRight size={16} />
-          </ButtonNext>
+        {results.length > visibleSlides && (
+          <>
+            <ButtonNext className="arrow-right">
+              <FaChevronCircleRight size={16} />
+            </ButtonNext>
+            <ButtonBack className="arrow-left">
+              <FaChevronCircleLeft size={16} />
+            </ButtonBack>
+          </>
         )}
       </CarouselProvider>
     </div>
@@ -96,9 +122,5 @@ function ResetCarouselSlideAndGoBack({ watch }: { watch: any }) {
     return <noscript />;
   }
 
-  return (
-    <ButtonBack className="arrow-left">
-      <FaChevronCircleLeft size={16} />
-    </ButtonBack>
-  );
+  return null;
 }

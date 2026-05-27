@@ -52,6 +52,26 @@ const GlobalStyles = createGlobalStyle`
       transform: rotate(359deg);
     }
   }
+
+  /* Mobile responsive modal styles */
+  @media (max-width: 575px) {
+    .ant-modal {
+      max-width: 95vw !important;
+    }
+
+    .ant-modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .ant-drawer-header {
+      padding: 12px;
+    }
+
+    .ant-drawer-body {
+      padding: 0;
+    }
+  }
 `;
 
 export default class MyApp extends App {

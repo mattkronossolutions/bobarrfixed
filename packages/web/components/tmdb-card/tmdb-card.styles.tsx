@@ -5,6 +5,10 @@ export const TMDBCardStyles = styled.div`
   position: relative;
   width: 220px;
 
+  @media (max-width: 575px) {
+    width: 100%;
+  }
+
   .poster--container {
     border-radius: 12px;
     cursor: pointer;
@@ -14,6 +18,12 @@ export const TMDBCardStyles = styled.div`
     overflow: hidden;
     width: 220px;
 
+    @media (max-width: 575px) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2 / 3;
+    }
+
     .poster,
     .overlay {
       height: 330px;
@@ -21,6 +31,11 @@ export const TMDBCardStyles = styled.div`
       left: 0;
       top: 0;
       position: absolute;
+
+      @media (max-width: 575px) {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .poster {
@@ -59,6 +74,13 @@ export const TMDBCardStyles = styled.div`
   .name {
     font-weight: 700;
     margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (max-width: 575px) {
+      font-size: 0.9em;
+    }
   }
 
   .date {
@@ -66,11 +88,19 @@ export const TMDBCardStyles = styled.div`
     font-size: 0.8em;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 575px) {
+      font-size: 0.7em;
+    }
   }
 
   .vote--container {
     position: absolute;
     top: 310px;
     left: 14px;
+
+    @media (max-width: 575px) {
+      top: calc(100% - 40px);
+    }
   }
 `;

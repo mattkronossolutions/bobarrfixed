@@ -63,8 +63,11 @@ export function MovieDetailsComponent(props: MovieDetailsProps) {
         onCancel={onRequestClose}
         footer={null}
         width="80vw"
-        style={{ maxWidth: 1280 }}
+        style={{
+          maxWidth: 1280,
+        }}
         bodyStyle={{ padding: 3, borderRadius: 4 }}
+        className="movie-details-modal"
       >
         <MovieDetailsStyles>
           <div className="close-icon" onClick={onRequestClose}>

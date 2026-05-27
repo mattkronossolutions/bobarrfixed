@@ -36,8 +36,16 @@ export const MovieDetailsStyles = styled.div`
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
-    padding: 3px 5px;
+    padding: 8px 12px;
     transition: 0.1s linear;
+    min-height: 44px;
+    min-width: 44px;
+
+    @media (max-width: 575px) {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
 
     &:hover {
       border: 1px solid #fff;
@@ -84,6 +92,14 @@ export const MovieDetailsStyles = styled.div`
     left: 0;
     width: 100%;
     z-index: 2;
+
+    @media (max-width: 575px) {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(12.94%, 14.9%, 22.75%, 1) 150px,
+        rgba(20.39%, 22.35%, 29.02%, 0.84) 100%
+      );
+    }
   }
 
   .header-content {
@@ -95,16 +111,34 @@ export const MovieDetailsStyles = styled.div`
     width: 100%;
     position: relative;
     z-index: 3;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
   }
 
   .poster-container {
     height: 100%;
     width: 200px;
+    flex-shrink: 0;
+
+    @media (max-width: 575px) {
+      width: 150px;
+      margin-bottom: 16px;
+    }
 
     .poster-image {
       border-radius: 4px;
       height: auto;
       width: 200px;
+
+      @media (max-width: 575px) {
+        width: 150px;
+      }
     }
   }
 
@@ -112,6 +146,10 @@ export const MovieDetailsStyles = styled.div`
     flex: 1;
     margin-left: 36px;
     color: #fff;
+
+    @media (max-width: 575px) {
+      margin-left: 0;
+    }
   }
 
   .title {
@@ -119,6 +157,12 @@ export const MovieDetailsStyles = styled.div`
     align-items: center;
     font-size: 2.2em;
     font-weight: 700;
+
+    @media (max-width: 575px) {
+      font-size: 1.4em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
 
     .year {
       font-size: 0.8em;
@@ -132,6 +176,12 @@ export const MovieDetailsStyles = styled.div`
     align-items: center;
     margin-top: 12px;
     margin-bottom: 12px;
+    min-height: 44px;
+
+    @media (max-width: 575px) {
+      width: 100%;
+      justify-content: center;
+    }
 
     svg {
       margin-right: 8px;
@@ -143,23 +193,47 @@ export const MovieDetailsStyles = styled.div`
     align-items: center;
     margin-top: 8px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .vote--container {
       margin-right: 24px;
+
+      @media (max-width: 575px) {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
     }
   }
 
   .overview {
     font-size: 1.2em;
     max-width: 780px;
+
+    @media (max-width: 575px) {
+      font-size: 0.95em;
+      max-width: 100%;
+    }
   }
 
   .buttons {
     margin-top: 24px;
     display: flex;
 
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+
     .btn {
       margin-right: 12px;
+
+      @media (max-width: 575px) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -171,6 +245,11 @@ export const MovieDetailsStyles = styled.div`
       text-overflow: ellipsis;
       overflow: hidden;
       max-width: 570px;
+
+      @media (max-width: 575px) {
+        white-space: normal;
+        max-width: 100%;
+      }
     }
 
     strong {

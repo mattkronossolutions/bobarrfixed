@@ -21,6 +21,11 @@ export const TVShowSeasonsModalComponentStyles = styled(MovieDetailsStyles)`
     transition: 0.1s linear;
     max-width: 145px;
 
+    @media (max-width: 575px) {
+      flex: 1 1 calc(50% - 8px);
+      max-width: none;
+    }
+
     &.selected {
       border-color: #fff;
     }
@@ -51,6 +56,10 @@ export const TVShowSeasonsModalComponentStyles = styled(MovieDetailsStyles)`
     .season-top {
       display: flex;
       align-items: center;
+
+      @media (max-width: 575px) {
+        flex-wrap: wrap;
+      }
     }
 
     .season-title,
@@ -66,6 +75,13 @@ export const TVShowSeasonsModalComponentStyles = styled(MovieDetailsStyles)`
       border: 1px solid #fff5;
       border-radius: 5px;
       padding: 0 4px;
+
+      @media (max-width: 575px) {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     .season-number {
@@ -88,6 +104,11 @@ export const TVShowSeasonsModalComponentStyles = styled(MovieDetailsStyles)`
       color: #fff;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 4px;
+      font-size: 0.9em;
+
+      @media (max-width: 575px) {
+        font-size: 0.8em;
+      }
 
       tr :hover > td {
         background: inherit;
@@ -95,6 +116,11 @@ export const TVShowSeasonsModalComponentStyles = styled(MovieDetailsStyles)`
 
       tr > td {
         border: none;
+        padding: 6px 8px;
+
+        @media (max-width: 575px) {
+          padding: 4px 4px;
+        }
       }
     }
   }
