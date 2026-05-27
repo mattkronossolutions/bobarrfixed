@@ -44,7 +44,7 @@ export function NavbarComponent() {
         title="Navigation"
         placement="left"
         onClose={() => setMenuOpen(false)}
-        open={menuOpen}
+        visible={menuOpen}
         bodyStyle={{ padding: 0 }}
       >
         <div className="drawer-links">
