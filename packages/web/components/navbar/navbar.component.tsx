@@ -51,7 +51,9 @@ export function NavbarComponent() {
           {links.map(([name, url]) => (
             <Link key={url} href={url} passHref={true}>
               <a
-                className={cx('drawer-link', { active: url === router.pathname })}
+                className={cx('drawer-link', {
+                  active: url === router.pathname,
+                })}
                 onClick={() => setMenuOpen(false)}
               >
                 {name}
