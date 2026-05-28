@@ -24,6 +24,5 @@ export const ManualSearchStyles = styled.div`
 
   .ant-table {
     font-size: 0.8em;
-    overflow-x: auto;
   }
 `;

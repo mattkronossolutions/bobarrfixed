@@ -97,6 +97,7 @@ export function JackettResultsTable({
       size="small"
       dataSource={results}
       columns={columns}
+      scroll={{ x: 'max-content' }}
     />
   );
 }
