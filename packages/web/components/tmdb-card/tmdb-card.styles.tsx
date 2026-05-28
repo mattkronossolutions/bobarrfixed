@@ -41,6 +41,9 @@ export const TMDBCardStyles = styled.div`
 
     .poster {
       background: #fecea8;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .overlay {
