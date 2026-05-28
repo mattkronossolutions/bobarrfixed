@@ -79,31 +79,6 @@ export const NavbarStyles = styled.div`
     }
   }
 
-  .drawer-links {
-    display: flex;
-    flex-direction: column;
-
-    .drawer-link {
-      padding: 16px;
-      color: rgba(0, 0, 0, 0.85);
-      text-decoration: none;
-      display: block;
-      border-bottom: 1px solid #f0f0f0;
-      transition: 0.2s;
-
-      &:hover,
-      &.active {
-        background: #fafafa;
-        color: ${({ theme }) => theme.colors.coral};
-        font-weight: 600;
-      }
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-
   .region-select {
     align-items: center;
     border-radius: 2px;
@@ -124,6 +99,32 @@ export const NavbarStyles = styled.div`
     &:hover {
       background: #fff;
       color: ${({ theme }) => theme.colors.navbarBackground};
+    }
+  }
+`;
+
+export const DrawerLinksStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .drawer-link {
+    padding: 16px;
+    color: rgba(0, 0, 0, 0.85);
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.2s;
+    font-size: 1em;
+
+    &:hover,
+    &.active {
+      background: #fafafa;
+      color: ${({ theme }) => theme.colors.coral};
+      font-weight: 600;
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 `;

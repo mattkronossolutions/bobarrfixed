@@ -6,7 +6,7 @@ import { Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 
 import { useGetParamsQuery } from '../../utils/graphql';
-import { NavbarStyles } from './navbar.styles';
+import { DrawerLinksStyles, NavbarStyles } from './navbar.styles';
 
 const links = [
   ['Movies', '/library/movies'],
@@ -47,7 +47,7 @@ export function NavbarComponent() {
         visible={menuOpen}
         bodyStyle={{ padding: 0 }}
       >
-        <div className="drawer-links">
+        <DrawerLinksStyles>
           {links.map(([name, url]) => (
             <Link key={url} href={url} passHref={true}>
               <a
@@ -60,7 +60,7 @@ export function NavbarComponent() {
               </a>
             </Link>
           ))}
-        </div>
+        </DrawerLinksStyles>
       </Drawer>
     </NavbarStyles>
   );
