@@ -20,6 +20,11 @@ export const MoviesComponentStyles = styled.div`
     margin-left: 12px;
     margin-right: 12px;
     height: ${({ theme }) => theme.tmdbCardHeight}px;
+
+    @media (max-width: 575px) {
+      width: calc(100% - 24px);
+      height: auto;
+    }
   }
 
   .sortable {

@@ -63,9 +63,8 @@ export function TMDBCardComponent(props: TMDBCardComponentProps) {
             <div className="action-label">See details</div>
           </>
         </div>
+        <RatingComponent rating={result.voteAverage * 10} />
       </div>
-
-      <RatingComponent rating={result.voteAverage * 10} />
 
       <div className="name">{result.title}</div>
       {result.releaseDate && (

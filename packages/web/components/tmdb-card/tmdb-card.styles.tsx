@@ -94,13 +94,10 @@ export const TMDBCardStyles = styled.div`
     }
   }
 
-  .vote--container {
+  .poster--container .vote--container {
     position: absolute;
-    top: 310px;
+    bottom: 10px;
     left: 14px;
-
-    @media (max-width: 575px) {
-      top: calc(100% - 40px);
-    }
+    top: auto;
   }
 `;
