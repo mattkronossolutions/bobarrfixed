@@ -8,15 +8,22 @@ export const ManualSearchStyles = styled.div`
 
   .search-input {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 12px;
     margin-bottom: 12px;
 
+    .ant-input-search {
+      width: 100%;
+    }
+
     .action-btn {
-      margin-left: 12px;
+      flex: 1;
     }
   }
 
   .ant-table {
     font-size: 0.8em;
+    overflow-x: auto;
   }
 `;

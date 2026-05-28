@@ -124,7 +124,7 @@ export function ManualSearchComponent(props: ManualSearchProps) {
       destroyOnClose={true}
       onCancel={handleClose}
       centered={true}
-      width={960}
+      width="min(960px, 95vw)"
       footer={[
         <Button key="close" onClick={handleClose}>
           Close
