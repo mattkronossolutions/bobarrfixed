@@ -2,8 +2,11 @@ FROM node:14-alpine
 
 RUN apk add curl
 
-ENV PORT 3000
+ENV PORT=3000
 EXPOSE 3000
+
+ARG WEB_UI_API_URL
+ENV WEB_UI_API_URL=$WEB_UI_API_URL
 
 WORKDIR /usr/src/app
 COPY package*.json yarn.lock ./
