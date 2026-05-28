@@ -18,6 +18,10 @@ module.exports = {
         source: '/graphql',
         destination: 'http://api:4000/graphql',
       },
+      {
+        source: '/image-cache',
+        destination: 'http://api:4000/image-cache',
+      },
     ];
   },
   async redirects() {

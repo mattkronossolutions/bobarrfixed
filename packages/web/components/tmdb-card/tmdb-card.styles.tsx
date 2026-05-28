@@ -13,7 +13,7 @@ export const TMDBCardStyles = styled.div`
     border-radius: 12px;
     cursor: pointer;
     height: 330px;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     position: relative;
     overflow: hidden;
     width: 220px;
@@ -22,6 +22,7 @@ export const TMDBCardStyles = styled.div`
       width: 100%;
       height: auto;
       aspect-ratio: 2 / 3;
+      margin-bottom: 6px;
     }
 
     .poster,

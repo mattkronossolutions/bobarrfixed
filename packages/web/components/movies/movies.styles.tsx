@@ -22,7 +22,7 @@ export const MoviesComponentStyles = styled.div`
     height: ${({ theme }) => theme.tmdbCardHeight}px;
 
     @media (max-width: 575px) {
-      width: calc(100% - 24px);
+      width: calc(50% - 24px);
       height: auto;
     }
   }
