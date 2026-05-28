@@ -12,6 +12,14 @@ module.exports = {
     };
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/graphql',
+        destination: 'http://api:4000/graphql',
+      },
+    ];
+  },
   async redirects() {
     return [
       {
